@@ -1,0 +1,16 @@
+monero_crack () {
+	local wallet_file="$1" 
+	local password_file="$2" 
+	while IFS= read -r password
+	do
+		local password=$(echo "$password" | tr -d '[:space:]') 
+		echo "Trying password: $password"
+		eval "$MONERO_DIR/monero-wallet-cli --wallet-file $wallet_file --password $password > /dev/null 2>&1"
+		if [ $? -eq 0 ]
+		then
+			echo "Correct password found: $password"
+			return
+		fi
+	done < "$password_file"
+	echo "End of password list reached."
+}

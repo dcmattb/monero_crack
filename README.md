@@ -1,6 +1,6 @@
 
 # monero_crack
-Script to use a password list to attack a monero wallet. This function can be used in ```bash```, ```zsh``` etc or you can make it easy by creating an alias and putting it in your profile.
+Script to use a password list to attack a monero wallet naïvely using the Monero Wallet CLI. This function can be used in ```bash```, ```zsh``` etc or you can make it more usable by creating an alias and putting it in your profile.
 
 ### Prerequisites
 1) You must install ```monero-wallet-cli``` from [getmonero.org](https://www.getmonero.org/resources/user-guides/monero-wallet-cli.html)
